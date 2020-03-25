@@ -4,6 +4,7 @@ package com.atguigu.springboot.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -12,13 +13,17 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class HelloController {
+public class HelloController  {
     @ResponseBody
     @RequestMapping("/hello")
     public String hello(){
-        return "hello";
+        return "你好么？？？";
     }
 
+   /* @RequestMapping({"/","/index"})
+    public String index(){
+        return "index";
+    }*/
 
 
     @RequestMapping("/success")
