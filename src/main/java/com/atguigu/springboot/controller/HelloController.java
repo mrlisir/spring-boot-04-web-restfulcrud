@@ -20,10 +20,10 @@ public class HelloController  {
         return "你好么？？？";
     }
 
-   /* @RequestMapping({"/","/index"})
-    public String index(){
-        return "index";
-    }*/
+//    @RequestMapping({"/","/login.html"})
+//    public String index(){
+//        return "login";
+//    }
 
 
     @RequestMapping("/success")
