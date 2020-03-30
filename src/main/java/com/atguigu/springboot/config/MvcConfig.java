@@ -1,5 +1,7 @@
 package com.atguigu.springboot.config;
 
+//import com.atguigu.springboot.compoent.LoginHandlerIntercceptor;
+//import com.atguigu.springboot.compoent.LoginHandlerIntercceptor;
 import com.atguigu.springboot.compoent.LoginHandlerIntercceptor;
 import com.atguigu.springboot.compoent.MyLocaleResolver;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
@@ -12,7 +14,7 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
 //@EnableWebMvc
 @Configuration
-public class MvcConfig extends WebMvcConfigurationSupport {
+public class MvcConfig implements WebMvcConfigurer {
 
   /*  @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -22,14 +24,14 @@ public class MvcConfig extends WebMvcConfigurationSupport {
         registry.addInterceptor(new LoginHandlerIntercceptor()).addPathPatterns("/**")
             .excludePathPatterns("/index.html","/","/user/login","/static");
     }*/
-
+/*----------------------------------生效的--------------------------*/
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         System.out.println("拦截器进入");
         registry.addInterceptor(new LoginHandlerIntercceptor()).addPathPatterns("/**").excludePathPatterns("/index.html","/","/user/login");
     }
 
-
+    /*----------------------------------生效的--------------------------*/
 
 
     public void addViewControllers(ViewControllerRegistry registry){
@@ -42,14 +44,16 @@ public class MvcConfig extends WebMvcConfigurationSupport {
 
         }
 
+   /* @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/static/");
+    }*/
 
 
-
-
-        @Bean
+    @Bean
         public LocaleResolver localeResolver(){
-
-            return new MyLocaleResolver();
+                return new MyLocaleResolver();
         }
 
 

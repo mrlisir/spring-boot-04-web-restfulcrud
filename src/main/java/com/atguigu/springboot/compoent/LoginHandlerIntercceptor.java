@@ -1,3 +1,4 @@
+package com.atguigu.springboot.compoent;/*
 package com.atguigu.springboot.compoent;
 
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -5,9 +6,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-/*
-登录检查
-* */
+*/
+
+import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+//登录检查
+
+
 
 public class LoginHandlerIntercceptor implements HandlerInterceptor {
     @Override
@@ -36,3 +44,4 @@ public class LoginHandlerIntercceptor implements HandlerInterceptor {
 
     }
 }
+
