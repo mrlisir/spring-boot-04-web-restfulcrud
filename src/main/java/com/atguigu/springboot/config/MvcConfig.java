@@ -2,6 +2,7 @@ package com.atguigu.springboot.config;
 
 //import com.atguigu.springboot.compoent.LoginHandlerIntercceptor;
 //import com.atguigu.springboot.compoent.LoginHandlerIntercceptor;
+//import com.atguigu.springboot.compoent.LoginHandlerIntercceptor;
 import com.atguigu.springboot.compoent.LoginHandlerIntercceptor;
 import com.atguigu.springboot.compoent.MyLocaleResolver;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
@@ -30,7 +31,6 @@ public class MvcConfig implements WebMvcConfigurer {
         System.out.println("拦截器进入");
         registry.addInterceptor(new LoginHandlerIntercceptor()).addPathPatterns("/**").excludePathPatterns("/index.html","/","/user/login");
     }
-
     /*----------------------------------生效的--------------------------*/
 
 
@@ -44,7 +44,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
         }
 
-   /* @Override
+    /*@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/static/");
